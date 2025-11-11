@@ -34,12 +34,35 @@ Dograh helps you build your own voice agents with an easy drag-and-drop workflow
 
 ## 🚀 Get Started
 
+### Quick Deploy Options
+
+**🐳 Docker Images (Recommended for this branch):**
+```bash
+# Pull pre-built independent images
+docker pull ghcr.io/pavleks/dograh-independent-api:latest
+docker pull ghcr.io/pavleks/dograh-independent-ui:latest
+docker compose up
+```
+
+**📦 Build Locally:**
+```bash
+./build-docker-images.sh  # Build images
+./save-docker-images.sh   # Save to tar files
+./load-docker-images.sh   # Load from tar files
+```
+
+**See [DOCKER_IMAGES.md](DOCKER_IMAGES.md) for complete Docker guide.**
+
+---
+
+### Standard Installation
+
 The only command you need to run:
 
 ##### Download and setup Dograh on your local machine
 
-> **Note**
-> We collect anonymous usage data to improve the product. You can opt out by setting the `ENABLE_TELEMETRY` to `false` in the below command.
+> **Note - Privacy First**
+> This branch has telemetry **DISABLED by default** for complete privacy. No data is sent to Dograh services.
 
 ```bash
 curl -o docker-compose.yaml https://raw.githubusercontent.com/dograh-hq/dograh/main/docker-compose.yaml && REGISTRY=ghcr.io/dograh-hq ENABLE_TELEMETRY=true docker compose up --pull always
@@ -56,9 +79,9 @@ curl -o docker-compose.yaml https://raw.githubusercontent.com/dograh-hq/dograh/m
 3. **Name Your Bot**: Use a short two-word name (e.g., _Lead Qualification_).
 4. **Describe Use Case**: In 5–10 words (e.g., _Screen insurance form submissions for purchase intent_).
 5. **Launch**: Your bot is ready! Open the bot and click **Web Call** to talk to it.
-6. **No API Keys Needed**: We auto-generate Dograh API keys so you can start immediately. You can switch to your own keys anytime.
-7. **Default Access**: Includes Dograh’s own LLMs, STT, and TTS stack by default.
-8. **Bring Your Own Keys**: Optionally connect your own API keys for LLMs, STT, TTS, or telephony providers like Twilio.
+6. **Your API Keys Required**: This fully independent version requires your own AI provider keys (OpenAI, Deepgram, ElevenLabs). No Dograh services used.
+7. **Complete Privacy**: Zero telemetry, no external tracking, all data stays with you.
+8. **Flexible Providers**: Use OpenAI, Groq, Google, Azure, Deepgram, ElevenLabs, or Cartesia for AI services.
 
 ## Quick Summary
 
