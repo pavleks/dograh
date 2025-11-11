@@ -90,9 +90,9 @@ services:
       # LANGFUSE_PUBLIC_KEY: ""
       # LANGFUSE_HOST: "https://langfuse.dograh.com"
 
-      # Sentry
-      ENABLE_TELEMETRY: "${ENABLE_TELEMETRY:-true}"
-      SENTRY_DSN: "https://3acdb63d5f1f70430953353b82de61e0@o4509486225096704.ingest.us.sentry.io/4510152922693632"
+      # Sentry - Disabled by default for privacy
+      ENABLE_TELEMETRY: "${ENABLE_TELEMETRY:-false}"
+      # SENTRY_DSN: ""  # Set your own Sentry DSN if needed
 
     ports:
       - "8000:8000"
@@ -126,14 +126,14 @@ services:
       NODE_ENV: "oss"
 
       # Flag to enable/ disable posthog and sentry
-      ENABLE_TELEMETRY: "${ENABLE_TELEMETRY:-true}"
+      ENABLE_TELEMETRY: "${ENABLE_TELEMETRY:-false}"
 
-      # Posthog
-      POSTHOG_KEY: "phc_ItizB1dP6yv7ZYobbcqrpxTdbomDA8hJFSEmAMdYvIr"
-      POSTHOG_HOST: "https://us.posthog.com"
+      # Posthog - Set your own keys if needed
+      # POSTHOG_KEY: ""
+      # POSTHOG_HOST: "https://us.posthog.com"
 
-      # Sentry
-      SENTRY_DSN: "https://d9387fed5f80e90781f1dbd9b2c0994c@o4509486225096704.ingest.us.sentry.io/4510124708200448"
+      # Sentry - Set your own DSN if needed
+      # SENTRY_DSN: ""
     ports:
       - "3010:3010"
     depends_on:

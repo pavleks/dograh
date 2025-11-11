@@ -22,7 +22,9 @@ REDIS_URL = os.environ["REDIS_URL"]
 
 DEPLOYMENT_MODE = os.getenv("DEPLOYMENT_MODE", "oss")
 DOGRAH_MPS_SECRET_KEY = os.getenv("DOGRAH_MPS_SECRET_KEY", None)
-MPS_API_URL = os.getenv("MPS_API_URL", "https://services.dograh.com")
+# MPS_API_URL: Set to Dograh's services URL to enable auto-key generation
+# Leave empty for fully independent deployment requiring your own AI provider keys
+MPS_API_URL = os.getenv("MPS_API_URL", "")
 
 # Storage Configuration
 ENABLE_AWS_S3 = os.getenv("ENABLE_AWS_S3", "false").lower() == "true"

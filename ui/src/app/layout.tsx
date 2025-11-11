@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 
-import ChatwootWidget from "@/components/ChatwootWidget";
+// Chatwoot widget disabled by default - uncomment and set env vars to enable
+// import ChatwootWidget from "@/components/ChatwootWidget";
 import PostHogIdentify from "@/components/PostHogIdentify";
 import SpinLoader from "@/components/SpinLoader";
 import { Toaster } from "@/components/ui/sonner";
@@ -45,7 +46,8 @@ export default function RootLayout({
                 <PostHogIdentify />
                 {children}
                 <Toaster />
-                <ChatwootWidget />
+                {/* Chatwoot widget disabled by default */}
+                {/* <ChatwootWidget /> */}
               </OnboardingProvider>
             </UserConfigProvider>
           </Suspense>

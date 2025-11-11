@@ -102,6 +102,38 @@ Architecture diagram _(coming soon)_
 
 Refer [prerequisites](https://docs.dograh.com/getting-started/prerequisites) and [first steps](#-get-started)
 
+### Fully Independent Deployment (Zero External Dependencies)
+
+This branch provides a **fully independent** deployment with **zero connections** to Dograh's services. Perfect for:
+- Privacy-conscious deployments
+- Air-gapped environments
+- Organizations requiring complete data sovereignty
+- Users who want full control over all services
+
+**What's Different:**
+- ✅ **No telemetry**: Error tracking disabled by default (`ENABLE_TELEMETRY=false`)
+- ✅ **No Chatwoot**: Support widget removed
+- ✅ **No MPS auto-keys**: Requires your own AI provider keys (OpenAI, Deepgram, ElevenLabs, etc.)
+- ✅ **Complete independence**: Zero data sent to Dograh infrastructure
+
+**Required Setup:**
+
+```bash
+# Set your AI provider keys
+export OPENAI_API_KEY=sk-proj-your-key
+export ELEVENLABS_API_KEY=sk_your-key
+export DEEPGRAM_API_KEY=your-key
+
+# Optional: Use other providers
+export GROQ_API_KEY=gsk_your-key
+export GOOGLE_API_KEY=AIzaSy-your-key
+
+# Run with telemetry disabled (already default in this branch)
+ENABLE_TELEMETRY=false docker compose up
+```
+
+**See [THIRD_PARTY_CONNECTIONS.md](THIRD_PARTY_CONNECTIONS.md) for complete documentation.**
+
 ### Production (Self-Hosted)
 
 Production guide coming soon. [Drop in a message](https://join.slack.com/t/dograh-community/shared_invite/zt-3czr47sw5-MSg1J0kJ7IMPOCHF~03auQ) for assistance.

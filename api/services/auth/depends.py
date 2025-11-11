@@ -245,6 +245,11 @@ async def create_user_configuration_with_mps_key(
         UserConfiguration with MPS-provided API keys or None if failed
     """
 
+    # Skip MPS key generation if MPS_API_URL is not configured
+    if not MPS_API_URL or MPS_API_URL == "":
+        logger.info("MPS_API_URL not configured. Skipping auto-key generation. Users must configure their own AI provider keys.")
+        return None
+
     async with httpx.AsyncClient() as client:
         # Use MPS API URL from constants
         if DEPLOYMENT_MODE == "oss":
