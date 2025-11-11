@@ -134,6 +134,21 @@ ENABLE_TELEMETRY=false docker compose up
 
 **See [THIRD_PARTY_CONNECTIONS.md](THIRD_PARTY_CONNECTIONS.md) for complete documentation.**
 
+### Railway Deployment (Recommended Cloud Option) ☁️
+
+Deploy to Railway.app in minutes with complete independence:
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/new)
+
+**Quick Start:**
+1. Click the button above or go to https://railway.app/new
+2. Connect your GitHub repository
+3. Add PostgreSQL and Redis databases
+4. Set your AI provider API keys (OpenAI, Deepgram, ElevenLabs)
+5. Deploy!
+
+**See [RAILWAY_DEPLOYMENT.md](RAILWAY_DEPLOYMENT.md) for complete step-by-step guide.**
+
 ### Production (Self-Hosted)
 
 Production guide coming soon. [Drop in a message](https://join.slack.com/t/dograh-community/shared_invite/zt-3czr47sw5-MSg1J0kJ7IMPOCHF~03auQ) for assistance.
